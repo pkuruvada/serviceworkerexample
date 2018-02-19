@@ -12,3 +12,5 @@ node server.js
 ```
 
 Screenshot of files served from serviceworkers
+
+![Alt text](screenshot.png?raw=true "Title")
