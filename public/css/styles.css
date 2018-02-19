@@ -1,0 +1,29 @@
+@keyframes textcolor {
+  10% {
+    color: red;
+  }
+  40% {
+    color: green;
+  }
+  70% {
+    color: yellow;
+  }
+  100% {
+    color: orange;
+  }
+}
+
+body {
+  background-color: #10b8ef;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+  font-family: 'Pacifico', cursive, serif;
+  font-size: 30px;
+  color: #002288;
+  animation: textcolor 2s infinite;
+}
