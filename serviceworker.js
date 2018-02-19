@@ -2,7 +2,6 @@ const CACHE_NAME ='sw-1-sample';
 
 // Install event fired first after register
 self.addEventListener('install', event => {
-
   event.waitUntil(async function() {
     const cache = await caches.open(CACHE_NAME);
     await cache.addAll(['/']);
@@ -10,11 +9,10 @@ self.addEventListener('install', event => {
 });
 
 
-/** Since the score of the service worker is the root of the application
-  * all fetch calls are caught
-
+/** Since the source of the service worker is the root of the application
+  all fetch calls are caught.
   We listent to every fetch call and return the response from cache if
-  available , else we make the fetch to network and cache the response.
+  available , else we make a network request and cache the response.
 **/
 self.addEventListener('fetch', event => {
 
@@ -45,11 +43,9 @@ self.addEventListener('fetch', event => {
   * Caches can be cleared in this stage
 **/
 self.addEventListener('activate', (event) => {
-
   event.waitUntil(async function() {
     const keys = await caches.keys();
     const currentCache = keys.find((key) => key === CACHE_NAME);
     caches.delete(currentCache);
   }());
-
 });
