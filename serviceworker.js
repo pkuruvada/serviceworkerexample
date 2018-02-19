@@ -9,7 +9,7 @@ self.addEventListener('install', event => {
 });
 
 
-/** Since the source of the service worker is the root of the application
+/** Since the scope of the service worker is the root of the application
   all fetch calls are caught.
   We listent to every fetch call and return the response from cache if
   available , else we make a network request and cache the response.
